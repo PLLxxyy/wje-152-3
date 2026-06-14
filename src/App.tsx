@@ -107,6 +107,7 @@ const App: React.FC = () => {
           <Home
             onSelectDevice={handleSelectFromHot}
             onGoSelect={() => setPage('select-device')}
+            onGoEstimateForAlert={handleSelectFromHot}
           />
         )}
 

@@ -72,5 +72,18 @@ export interface RecycleOrder {
   finalPrice?: number;
 }
 
+/** 估价提醒 */
+export interface PriceAlert {
+  id: string;
+  device: Device;
+  condition: ConditionForm;
+  expectedPrice: number;
+  currentPriceLow: number;
+  currentPriceHigh: number;
+  enabled: boolean;
+  triggered: boolean;
+  createdAt: string;
+}
+
 /** 页面路由 */
 export type PageName = 'home' | 'select-device' | 'condition-check' | 'price-result' | 'submit-order' | 'my-orders';

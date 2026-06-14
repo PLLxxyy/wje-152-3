@@ -362,9 +362,125 @@
       .success-title { font-size: 20px; font-weight: 600; margin-bottom: 8px; }
       .success-desc { font-size: 14px; color: #999; margin-bottom: 30px; }
 
+      /* Switch */
+      .switch {
+        position: relative;
+        display: inline-block;
+        width: 48px;
+        height: 28px;
+      }
+      .switch input { opacity: 0; width: 0; height: 0; }
+      .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0; left: 0; right: 0; bottom: 0;
+        background-color: #ccc;
+        transition: 0.3s;
+        border-radius: 28px;
+      }
+      .slider:before {
+        position: absolute;
+        content: "";
+        height: 22px;
+        width: 22px;
+        left: 3px;
+        bottom: 3px;
+        background-color: white;
+        transition: 0.3s;
+        border-radius: 50%;
+      }
+      .switch input:checked + .slider { background-color: #667eea; }
+      .switch input:checked + .slider:before { transform: translateX(20px); }
+
+      /* Alerts Section */
+      .alerts-section { margin-bottom: 24px; }
+      .alerts-section h2 { font-size: 18px; font-weight: 600; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+      .alert-notice {
+        background: linear-gradient(135deg, #ff6b6b 0%, #ee5a5a 100%);
+        color: #fff;
+        padding: 14px 16px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        box-shadow: 0 4px 12px rgba(255, 107, 107, 0.25);
+      }
+      .alert-notice .alert-icon { font-size: 20px; flex-shrink: 0; }
+      .alert-notice .alert-text { flex: 1; }
+      .alert-notice strong { display: block; font-size: 15px; margin-bottom: 2px; }
+      .alert-notice span { font-size: 12px; opacity: 0.9; }
+
+      .alert-list { display: flex; flex-direction: column; gap: 10px; }
+      .alert-item {
+        background: #f9fafb;
+        border-radius: 12px;
+        padding: 14px 16px;
+        border: 2px solid transparent;
+        transition: all 0.2s;
+      }
+      .alert-item.triggered {
+        background: #fff5f5;
+        border-color: #ffcdd2;
+      }
+      .alert-item-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 8px;
+      }
+      .alert-device-name { font-size: 15px; font-weight: 600; }
+      .alert-badge {
+        font-size: 11px;
+        padding: 2px 8px;
+        border-radius: 10px;
+        font-weight: 500;
+        white-space: nowrap;
+      }
+      .badge-triggered { background: #ffebee; color: #e53935; }
+      .badge-watching { background: #e3f2fd; color: #1976d2; }
+      .badge-disabled { background: #eeeeee; color: #757575; }
+      .alert-price-row {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 6px;
+      }
+      .alert-expected { font-size: 16px; font-weight: 700; color: #ff6b6b; }
+      .alert-current { font-size: 13px; color: #666; }
+      .alert-condition { font-size: 12px; color: #999; margin-bottom: 10px; }
+      .alert-actions {
+        display: flex;
+        gap: 8px;
+        padding-top: 10px;
+        border-top: 1px solid #eee;
+      }
+      .alert-action-btn {
+        flex: 1;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 8px;
+        font-size: 13px;
+        cursor: pointer;
+        transition: background 0.2s;
+      }
+      .alert-action-btn.primary {
+        background: #667eea;
+        color: #fff;
+      }
+      .alert-action-btn.primary:hover { background: #5a6fd8; }
+      .alert-action-btn.danger {
+        background: #fff0f0;
+        color: #ff6b6b;
+      }
+      .alert-action-btn.danger:hover { background: #ffe0e0; }
+
       /* Animations */
       @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+      @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.7; } }
       .fade-in { animation: fadeIn 0.3s ease; }
+      .pulse { animation: pulse 1.5s ease-in-out infinite; }
     </style>
   </head>
   <body>
